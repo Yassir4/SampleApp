@@ -11,8 +11,19 @@
   <body>
     <%=render 'layouts/header' %>
     <div class="container">
+      
+      <!--this block is for showing a message in case of (succefful or failed signup ) -->
+      <!--and the message type is a special key known by Bootstrap (alert alert-...)-->
+      <% flash.each do |message_type, message| %>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
+      
       <%= yield %>
+      
       <%= render 'layouts/footer' %>
+      
+      <%= debug(params) if Rails.env.development? %>
+
     </div>
   </body>
   
