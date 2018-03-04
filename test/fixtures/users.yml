@@ -4,3 +4,16 @@ yassir:
   name: Yassir hartani
   email: yassir@example.com
   password_digest: <%= User.digest('password') %>
+  admin: true
+
+l3chir:
+  name: some one
+  email: someone@example.gov
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name:  <%= "name #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
