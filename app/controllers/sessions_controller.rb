@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
         redirect_to root_url
       end
     else
-      # Invalid information
+      # Invalid information 
       flash.now[:danger] = 'WAA ba khona ta zyeeeer'
       render 'new'
     end
